@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.10.13)  15 NOV 2018 12:17
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.10.13)  16 NOV 2018 08:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1256,38 +1256,4 @@ LaTeX Font Info:    Font shape `TU/SourceSansPro(2)/m/it' will be
 LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 27.
 LaTeX Font Info:    Font shape `TU/SourceSansPro(1)/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 27.
-LaTeX Font Info:    Font shape `TU/SourceSansPro(2)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 27.
-LaTeX Font Info:    Font shape `TU/SourceSansPro(2)/m/sl' in size <8> not avail
-able
-(Font)              Font shape `TU/SourceSansPro(2)/m/it' tried instead on inpu
-t line 27.
-LaTeX Font Info:    Font shape `TU/SourceSansPro(2)/m/it' will be
-(Font)              scaled to size 8.0pt on input line 27.
-) (./resume/entrepreneurship.tex)
-(./resume/education.tex) (./resume/projects.tex) (./resume/miscellaneous.tex)
-[1
-! I can't write on file `resume.pdf'.
-(Press Enter to retry, or Control-D to exit; default file extension is `.pdf')
-Please type another file name for output: 
-! I can't write on file `resume.pdf'.
-(Press Enter to retry, or Control-D to exit; default file extension is `.pdf')
-Please type another file name for output: 
-! Emergency stop.
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.105 \end{document}
-                    
-End of file on the terminal!
-
- 
-Here is how much of TeX's memory you used:
- 38050 strings out of 493007
- 749814 string characters out of 6136718
- 954211 words of memory out of 5000000
- 41538 multiletter control sequences out of 15000+600000
- 532706 words of font info for 80 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 72i,11n,89p,10425b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
+(Font)              scaled to siz
