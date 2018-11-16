@@ -4,6 +4,7 @@ rm *.log
 rm *.out
 rm *.synctex*
 rm *.aux
+rm *.pdf
 
 xelatex resume.tex
 
