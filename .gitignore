@@ -1,4 +1,4 @@
 *.log
 *.out
-*.synctex.gz
-*.oux
+*.synctex*
+*.aux
