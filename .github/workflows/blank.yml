@@ -11,4 +11,5 @@ jobs:
         with:
           root_file: resume.tex
           compiler: xelatex
+          extra_system_packages: texlive-fonts-extra
           args: -interaction=nonstopmode -shell-escape
