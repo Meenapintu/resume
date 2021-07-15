@@ -13,3 +13,16 @@ jobs:
           compiler: xelatex
           extra_system_packages: texlive-fonts-extra
           args: -interaction=nonstopmode -shell-escape
+      - name: Gather build artifacts
+        run: |
+          mkdir build
+          mv *.pdf build/
+          cp -r README.md .github/_config.yml, build/
+      - name: Publish to GitHub pages
+        if: success() && github.ref == 'refs/heads/main'
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
