@@ -1,0 +1,27 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: make.sh
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: resume.tex
+          compiler: xelatex
+          extra_system_packages: texlive-fonts-extra
+          args: -interaction=nonstopmode -shell-escape
+      - name: Gather build artifacts
+        run: |
+          mkdir build
+          mv *.pdf build/
+      - name: Publish to GitHub pages
+        if: success() && github.ref == 'refs/heads/master'
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
