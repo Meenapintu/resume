@@ -9,4 +9,6 @@ jobs:
       - name: make.sh
         uses: dante-ev/latex-action@latest
         with:
-          entrypoint: ./make.sh
+          root_file: resume.tex
+          compiler: xelatex
+          args: -interaction=nonstopmode -shell-escape
