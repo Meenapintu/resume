@@ -1,8 +1,12 @@
 %% Start of file `awesome-cv.cls'.
 % Awesome CV Class File
 %
-% Author:Pintu Meena
-% License: MIT
+% This class has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
 %
 % Notes:
 % 1) This class file defines the structure and layout of the template file (cv.tex, resume.tex).
@@ -157,9 +161,9 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\setfontfamily\FA[Path=\@fontdir]{FontAwesome}
+\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
-\setfontfamily\headerfont[
+\newfontfamily\headerfont[
   Path=\@fontdir,
   UprightFont=*-Regular,
   ItalicFont=*-Italic,
@@ -167,7 +171,7 @@
   BoldItalicFont=*-BoldItalic,
 ]{Roboto}
 
-\setfontfamily\headerfontlight[
+\newfontfamily\headerfontlight[
   Path=\@fontdir,
   UprightFont=*-Thin,
   ItalicFont=*-ThinItalic,
@@ -266,7 +270,7 @@
 \newcommand*{\address}[1]{\def\@address{#1}}
 
 % Define writer's position
-% Usage: \name{<position>}
+% Usage: \position{<position>}
 \newcommand*{\position}[1]{\def\@position{#1}}
 
 % Defines writer's mobile (optional)
@@ -274,7 +278,7 @@
 \newcommand*{\mobile}[1]{\def\@mobile{#1}}
 
 % Defines writer's email (optional)
-% Usage: \email{<email adress>}
+% Usage: \email{<email address>}
 \newcommand*{\email}[1]{\def\@email{#1}}
 
 % Defines writer's homepage (optional)
@@ -299,6 +303,7 @@
 % Usage: \linkedin{<linked-in-nick>}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 
+% Defines writer's twitter (optional)
 % Usage: \twitter{<twitter handle>}
 \newcommand*{\twitter}[1]{\def\@twitter{#1}}
 
@@ -314,7 +319,25 @@
 % Usage: \xing{<xing name>}
 \newcommand*{\xing}[1]{\def\@xing{#1}}
 
-% Defines writer's twitter (optional)
+% Defines writer's medium profile (optional)
+% Usage: \medium{<medium account>}
+\newcommand*{\medium}[1]{\def\@medium{#1}}
+
+% Defines writer's google scholar profile (optional)
+% Usage: \googlescholar{<googlescholar userid>}{<googlescholar username>}
+% e.g.https://scholar.google.co.uk/citations?user=wpZDx1cAAAAJ
+% would be \googlescholar{wpZDx1cAAAAJ}{Name-to-display-next-icon}
+% If 'googlescholar-name' is not provided than it defaults to
+% '\firstname \lastname'
+\newcommand*{\googlescholar}[2]{%
+  \def\@googlescholarid{#1}%
+  \ifthenelse{\equal{#2}{}}{%
+    \def\@googlescholarname{\@firstname~\@lastname}%
+  }{%
+    \def\@googlescholarname{#2}%
+  }%
+}
+
 % Defines writer's extra informations (optional)
 % Usage: \extrainfo{<extra informations>}
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
@@ -372,7 +395,7 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{2mm}
+\newcommand{\acvSectionTopSkip}{3mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
 
 
@@ -498,6 +521,18 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
         }%
+      \ifthenelse{\isundefined{\@medium}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
+        }%
+      \ifthenelse{\isundefined{\@googlescholarid}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{https://scholar.google.com/citations?user=\@googlescholarid}{\faGraduationCap\acvHeaderIconSep\@googlescholarname}%
+        }%
       \ifthenelse{\isundefined{\@extrainfo}}%
         {}%
         {%
@@ -550,17 +585,7 @@
   \par
   \vspace{2mm}
 }
-% Define a projects for CV
-\newenvironment{cvprojects}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
-  \begin{center}
-  
-}{%
-  \par
-  \vspace{2mm}
-  \end{center}
-}
+
 % Define an environment for cventry
 \newenvironment{cventries}{%
   \vspace{\acvSectionContentTopSkip}
@@ -582,34 +607,6 @@
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
-
-\newcommand*{\cvedu}[4]{%
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    %\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
-  \end{tabular*}%
-}
-
-
-\newcommand*{\cvproject}[1]{%
-  \vspace{-2.0mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-  %  \ifempty{#2#3}
- %     {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
- %     {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
- %     \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#1}}
-  \end{tabular*}%
-}
-
 
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
@@ -653,7 +650,6 @@
   \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
 
-
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
@@ -684,7 +680,6 @@
   \end{justify}
   \vspace{-4.0mm}
 }
-
 
 
 %-------------------------------------------------------------------------------
