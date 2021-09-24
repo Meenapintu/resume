@@ -608,6 +608,47 @@
   \end{tabular*}%
 }
 
+% Define a education for CV
+\newcommand*{\cvedu}[4]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    %\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
+
+% Define a projects for CV
+\newenvironment{cvprojects}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-3mm}
+  \begin{center}
+
+}{%
+  \par
+  \vspace{2mm}
+  \end{center}
+}
+
+% Define a project for CV
+\newcommand*{\cvproject}[1]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  %  \ifempty{#2#3}
+ %     {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+ %     {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+ %     \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#1}}
+  \end{tabular*}%
+}
+
+
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
