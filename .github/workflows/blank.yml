@@ -13,6 +13,13 @@ jobs:
           compiler: xelatex
           extra_system_packages: texlive-fonts-extra
           args: -interaction=nonstopmode -shell-escape
+      - name: make.sh [2page]
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: resume_2page.tex
+          compiler: xelatex
+          extra_system_packages: texlive-fonts-extra
+          args: -interaction=nonstopmode -shell-escape
       - name: Gather build artifacts
         run: |
           mkdir build
