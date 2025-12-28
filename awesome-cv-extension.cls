@@ -16,6 +16,14 @@
 \newcommand{\metric}[1]{\textbf{\textcolor{darkgray}{#1}}}
 
 
+% Define a section for CV
+% Usage: \cvsection{<section-title>}
+\newcommand{\cvsectionOverride}[1]{%
+  %\vspace{\acvSectionTopSkip}
+  \sectionstyle{#1}
+  \phantomsection
+  \color{sectiondivider}\vhrulefill{0.9pt}
+}
 
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
