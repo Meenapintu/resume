@@ -7,5 +7,6 @@ rm *.aux
 rm *.pdf
 
 xelatex resume.tex
+xelatex resume_2page.tex
 
 sudo killall -9 xelatex
