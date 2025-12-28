@@ -236,6 +236,7 @@
 \newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{lighttext} #1}}
 
+\newcommand{\metric}[1]{\textbf{\textcolor{darkgray}{#1}}}
 
 %-------------------------------------------------------------------------------
 %                Commands for personal information
