@@ -41,3 +41,11 @@
       {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
   \end{tabular*}%
 }
+
+\newcommand*{\skillOverride}[1]{%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifstrempty{#1}
+      {}
+      {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#1}} \\}
+  \end{tabular*}%
+}
