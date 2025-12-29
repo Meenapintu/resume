@@ -6,7 +6,7 @@ RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 resume.pdf:
 	@echo "--- Compiling tex files ---"
 	#@xelatex resume.tex
-	resume_2page.tex $(RESUME_SRCS)
+	./resume_2page.tex $(RESUME_SRCS)
 	$(CC) -output-directory=. $<
 	#@xelatex resume_2page.tex
 	@echo "--- Finished the command ---"
