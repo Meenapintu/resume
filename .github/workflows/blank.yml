@@ -11,9 +11,9 @@ jobs:
         uses: zauguin/install-texlive@v1 # Or a similar action like paolobrasolin/setup-texlive-action
         with:
           # Installs a minimal scheme
-          scheme: scheme-minimal
+          scheme: packages
           # List the required packages, one per line
-          packages: |
+          packages: >
             fontawesome6
       #- name: make.sh
       #  uses: dante-ev/latex-action@latest
