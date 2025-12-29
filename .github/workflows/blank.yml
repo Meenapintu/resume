@@ -3,18 +3,10 @@ on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    container: texlive/texlive:latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
-
-      - name: Set up minimal TeX Live with specific packages
-        uses: zauguin/install-texlive@v1 # Or a similar action like paolobrasolin/setup-texlive-action
-        with:
-          # Installs a minimal scheme
-          scheme: packages
-          # List the required packages, one per line
-          packages: >
-            fontawesome6
+        uses: actions/checkout@v4
       #- name: make.sh
       #  uses: dante-ev/latex-action@latest
       #  with:
@@ -23,12 +15,8 @@ jobs:
       #    extra_system_packages: texlive-fonts-extra
       #    args: -interaction=nonstopmode -shell-escape
       - name: make.sh [2page]
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: resume_2page.tex
-          compiler: xelatex
-          extra_system_packages: 
-          args: -interaction=nonstopmode -shell-escape
+        run: make.sh
+
       - name: Gather build artifacts
         run: |
           mkdir build
