@@ -15,7 +15,7 @@ jobs:
       #    extra_system_packages: texlive-fonts-extra
       #    args: -interaction=nonstopmode -shell-escape
       - name: make.sh [2page]
-        run: make.sh
+        run: make
 
       - name: Gather build artifacts
         run: |
