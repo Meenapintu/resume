@@ -1,13 +1,18 @@
-all: pre_clean_up run_command
+all: pre_clean_up resume.pdf
 
-run_command:
+CC = xelatex
+RESUME_DIR = resume_2page
+RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
+resume.pdf:
 	@echo "--- Compiling tex files ---"
 	#@xelatex resume.tex
-	@xelatex resume_2page.tex
+	resume_2page.tex $(RESUME_SRCS)
+	$(CC) -output-directory=. $<
+	#@xelatex resume_2page.tex
 	@echo "--- Finished the command ---"
-	sudo killall -9 xelatex
+	#sudo killall -9 xelatex
 
-.PHONY:  all run_command clean
+.PHONY:  all resume.pdf clean
 
 clean:
 	@echo "Cleaning up..."
