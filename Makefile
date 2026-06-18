@@ -2,7 +2,7 @@ all: pre_clean_up depinstall resume.pdf
 
 depinstall:
 	echo "Nothing to install"
-	fc-list | grep -i "Source Sans 3"
+	#fc-list | grep -i "Source Sans 3"
 
 MAIN_TEX = ./resume_2page
 CC = xelatex --interaction=nonstopmode
