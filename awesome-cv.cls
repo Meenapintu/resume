@@ -80,7 +80,9 @@
 \RequirePackage{roboto}
 \RequirePackage[default,opentype]{sourcesanspro}
 \RequirePackage{accsupp}
-
+\defaultfontfeatures{
+  Renderer=HarfBuzz,
+}
 \setmainfont{Source Sans 3}
 \setsansfont{Source Sans 3}
 \newfontfamily\roboto{Roboto}
