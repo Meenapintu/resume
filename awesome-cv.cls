@@ -81,13 +81,13 @@
 \defaultfontfeatures{
   Renderer=HarfBuzz,
 }
-\setmainfont{Source Sans 3}[
+\setmainfont{SourceSans3-Regular.otf}[
   UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=Source Sans 3 Light, Style=Regular},
-  FontFace={l}{it}{Font=Source Sans 3 Light, Style=Italic}
+  ItalicFont=SourceSans3-It.otf,
+  BoldFont=SourceSans3-Bold.otf,
+  BoldItalicFont=SourceSans3-BoldIt.otf,
+  FontFace={l}{n}{Font=SourceSans3-Light.otf},
+  FontFace={l}{it}{Font=SourceSans3-LightIt.otf}
 ]
 \setsansfont{Source Sans 3}[
   UprightFont=*,
