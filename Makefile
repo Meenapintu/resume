@@ -1,7 +1,7 @@
 all: pre_clean_up depinstall resume.pdf
 
 depinstall:
-	wget https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip
+	curl -LO https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip
 	unzip OTF-source-sans-3.052R.zip
 	mkdir -p ~/.local/share/fonts/SourceSans3
 	cp OTF/*.otf ~/.local/share/fonts/SourceSans3/
