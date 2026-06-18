@@ -80,6 +80,10 @@
 \RequirePackage{roboto}
 \RequirePackage[default,opentype]{sourcesanspro}
 \RequirePackage{accsupp}
+
+\setmainfont{Source Sans 3}
+\setsansfont{Source Sans 3}
+\newfontfamily\roboto{Roboto}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
