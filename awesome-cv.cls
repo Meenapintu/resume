@@ -77,34 +77,9 @@
 \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome6}
+\RequirePackage{roboto}
+\RequirePackage[default,opentype]{sourcesanspro}
 \RequirePackage{accsupp}
-\defaultfontfeatures{
-  Renderer=HarfBuzz,
-}
-\setmainfont{SourceSans3-Regular.otf}[
-  UprightFont=*,
-  ItalicFont=SourceSans3-It.otf,
-  BoldFont=SourceSans3-Bold.otf,
-  BoldItalicFont=SourceSans3-BoldIt.otf,
-  FontFace={l}{n}{Font=SourceSans3-Light.otf},
-  FontFace={l}{it}{Font=SourceSans3-LightIt.otf}
-]
-\setsansfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
-\newfontfamily\roboto{Roboto}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
-]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
