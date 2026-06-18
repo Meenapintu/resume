@@ -86,16 +86,16 @@
   ItalicFont=* Italic,
   BoldFont=* Bold,
   BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=Source Sans 3 Light},
-  FontFace={l}{it}{Font=Source Sans 3 Light Italic},
+  FontFace={l}{n}{Font=* Light},
+  FontFace={l}{it}{Font=* LightItalic},
 ]
 \setsansfont{Source Sans 3}[
   UprightFont=*,
   ItalicFont=* Italic,
   BoldFont=* Bold,
   BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=Source Sans 3 Light},
-  FontFace={l}{it}{Font=Source Sans 3 Light Italic},
+  FontFace={l}{n}{Font=* Light},
+  FontFace={l}{it}{Font=* LightItalic },
 ]
 \newfontfamily\roboto{Roboto}[
   UprightFont=*,
@@ -103,7 +103,7 @@
   BoldFont=* Bold,
   BoldItalicFont=* Bold Italic,
   FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
+  FontFace={l}{it}{Font=* LightItalic},
 ]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
