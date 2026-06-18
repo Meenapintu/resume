@@ -1,4 +1,12 @@
-all: pre_clean_up resume.pdf
+all: pre_clean_up depinstall resume.pdf
+
+depinstall:
+	wget https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip
+	unzip OTF-source-sans-3.052R.zip
+	mkdir -p ~/.local/share/fonts/SourceSans3
+	cp OTF/*.otf ~/.local/share/fonts/SourceSans3/
+	fc-cache -f -v
+	fc-list | grep -i "Source Sans 3"
 
 MAIN_TEX = ./resume_2page
 CC = xelatex --interaction=nonstopmode
@@ -7,7 +15,7 @@ RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 resume.pdf: $(MAIN_TEX).tex $(RESUME_SRCS)
 	$(CC) $<
 
-.PHONY:  all resume.pdf clean pre_clean_up
+.PHONY:  all depinstall resume.pdf clean pre_clean_up
 
 clean:
 	@echo "Cleaning up..."
