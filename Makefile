@@ -1,11 +1,7 @@
 all: pre_clean_up depinstall resume.pdf
 
 depinstall:
-	curl -LO https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip
-	unzip OTF-source-sans-3.052R.zip
-	mkdir -p ~/.local/share/fonts/SourceSans3
-	cp OTF/*.otf ~/.local/share/fonts/SourceSans3/
-	fc-cache -f -v
+	echo "Nothing to install"
 	fc-list | grep -i "Source Sans 3"
 
 MAIN_TEX = ./resume_2page
